@@ -1,29 +1,21 @@
-from contextlib import asynccontextmanager
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.router import api_router
 from app.core.config import get_settings
-from app.core.logging import configure_logging, get_logger
+from app.core.logging import configure_logging
 from app.db.session import initialize_database
 
 settings = get_settings()
-configure_logging(settings.log_level)
-logger = get_logger(__name__)
+configure_logging()
+
+app = FastAPI(title=settings.app_name)
 
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    if settings.session_persistence_enabled:
-        initialize_database()
-        logger.info("Database initialized")
-    else:
-        logger.info("Session persistence disabled; running without database persistence")
-    yield
+@app.on_event("startup")
+def on_startup() -> None:
+    initialize_database()
 
-
-app = FastAPI(title=settings.app_name, version="1.0.0", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,

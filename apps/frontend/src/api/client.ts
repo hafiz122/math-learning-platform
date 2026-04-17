@@ -4,13 +4,16 @@ async function request<T>(
   path: string,
   init: globalThis.RequestInit = {},
 ): Promise<T> {
+  const headers = new Headers(init.headers ?? {});
+
+  if (init.body && !headers.has("Content-Type")) {
+    headers.set("Content-Type", "application/json");
+  }
+
   const response = await fetch(`${API_BASE_URL}${path}`, {
     credentials: "include",
-    headers: {
-      "Content-Type": "application/json",
-      ...(init.headers ?? {}),
-    },
     ...init,
+    headers,
   });
 
   if (!response.ok) {
