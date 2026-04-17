@@ -1,0 +1,47 @@
+math-learning-platform/
+├── apps/
+│   ├── frontend/
+│   │   ├── public/
+│   │   ├── src/
+│   │   │   ├── api/
+│   │   │   ├── app/
+│   │   │   ├── components/
+│   │   │   ├── hooks/
+│   │   │   ├── pages/
+│   │   │   ├── styles/
+│   │   │   └── types/
+│   │   ├── tests/
+│   │   ├── .env.example
+│   │   ├── netlify.toml
+│   │   ├── package.json
+│   │   ├── tailwind.config.ts
+│   │   ├── vite.config.ts
+│   │   └── vitest.config.ts
+│   └── backend/
+│       ├── alembic/
+│       │   └── versions/
+│       ├── app/
+│       │   ├── api/
+│       │   ├── core/
+│       │   ├── db/
+│       │   ├── models/
+│       │   ├── repositories/
+│       │   ├── schemas/
+│       │   ├── services/
+│       │   └── utils/
+│       ├── tests/
+│       ├── .env.example
+│       ├── alembic.ini
+│       ├── pyproject.toml
+│       ├── Procfile
+│       └── render.yaml
+├── docs/
+├── infrastructure/
+│   ├── docker/
+│   ├── netlify/
+│   └── render/
+├── .editorconfig
+├── .gitignore
+├── docker-compose.yml
+├── package.json
+└── README.md

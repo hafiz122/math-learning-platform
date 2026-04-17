@@ -1,0 +1,16 @@
+{
+  "name": "math-learning-platform",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/frontend"
+  ],
+  "scripts": {
+    "dev:frontend": "npm --workspace apps/frontend run dev",
+    "build:frontend": "npm --workspace apps/frontend run build",
+    "test:frontend": "npm --workspace apps/frontend run test",
+    "lint:frontend": "npm --workspace apps/frontend run lint",
+    "docker:up": "docker compose up --build",
+    "docker:down": "docker compose down -v"
+  }
+}

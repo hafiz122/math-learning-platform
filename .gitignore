@@ -1,0 +1,17 @@
+node_modules
+dist
+coverage
+.env
+.venv
+__pycache__
+.pytest_cache
+.mypy_cache
+.vscode
+.DS_Store
+*.pyc
+apps/backend/.env
+apps/frontend/.env
+apps/backend/.coverage
+apps/backend/htmlcov
+apps/frontend/coverage
+apps/backend/math_learning.db
