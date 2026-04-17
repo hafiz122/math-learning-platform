@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Math Learning Platform
 
 A production-ready math practice website with:
@@ -154,6 +153,3 @@ pytest
 - Teacher/admin tooling
 - Saved progress and leaderboards
 - Content moderation and question auditing
-=======
-# math-learn
->>>>>>> 90c01339ae804cd36384370d67d695d4e5a1e78f
